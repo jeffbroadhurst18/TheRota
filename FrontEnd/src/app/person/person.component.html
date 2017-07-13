@@ -1,0 +1,38 @@
+<div class="col-md-6 col-md-offset-3">
+    <my-wait [hidden]="notBusy"></my-wait>
+    
+    <form *ngIf="newPerson" [formGroup]="newPersonForm" (ngSubmit)="addPerson(newPersonForm.value)">
+        <div class="form-group">
+            <label>First Name:</label>
+            <input class="form-control" type="text" [formControl]="newPersonForm.controls['firstName']" [(ngModel)]="newPerson.FirstName">
+            <div class="alert alert-danger" *ngIf="!newPersonForm.controls['firstName'].valid && showValidation==true">Invalid</div>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" type="text" [formControl]="newPersonForm.controls['lastName']" [(ngModel)]="newPerson.LastName">
+            <div class="alert alert-danger" *ngIf="!newPersonForm.controls['lastName'].valid && showValidation==true">Invalid</div>
+        </div>
+        <div class="form-group">
+            <label>Id Number</label>
+            <input class="form-control" type="text" [formControl]="newPersonForm.controls['idNumber']" [(ngModel)]="newPerson.IdNumber">
+            <div class="alert alert-danger" *ngIf="!newPersonForm.controls['idNumber'].valid && showValidation==true">Invalid</div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Submit</button>
+            <!--<button type="submit" class="btn btn-default" [disabled]="!newPersonForm.valid">Submit</button>-->
+        </div>
+    </form> 
+    
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Id</th>
+        </tr>
+        <tr *ngFor="let person of persons">
+            <td>{{ person.FirstName }}</td>
+            <td>{{ person.LastName }}</td>
+            <td>{{ person.IdNumber }}</td>
+        </tr>
+    </table>
+</div>

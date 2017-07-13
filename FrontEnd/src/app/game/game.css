@@ -1,0 +1,19 @@
+@import '~/node_modules/bootstrap/dist/bootstrap.css';
+
+h1{
+    color:blue;
+}
+
+
+.game-square{
+ border: black;
+ border-width: 2px;
+ border-style: solid;
+ height: 180px;
+ width:180px;
+ /*background: white;*/
+}
+
+.game-row{
+    height: 30px;
+}

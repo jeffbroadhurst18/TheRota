@@ -1,0 +1,23 @@
+<h1>Noughts and Crosses</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"><button (click)="restart()">Re-Start</button></div>
+    <div class="col-md-7">
+      <table>
+        <tr *ngFor="let row of rows">
+          <td class="game-square" [@squareState]="row.one" (click)="processClick(1,row)"></td>
+          <td class="game-square" [@squareState]="row.two" (click)="processClick(2,row)"></td>
+          <td class="game-square" [@squareState]="row.three" (click)="processClick(3,row)"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-3">
+      <div [hidden]="haveAWinner==true">
+        <h3>Next Colour: {{nextcolor}}</h3>
+      </div>
+      <div [hidden]="haveAWinner!=true">
+        <h3>Winner is : {{winnerName}}</h3>
+      </div>
+    </div>
+  </div>
+</div>

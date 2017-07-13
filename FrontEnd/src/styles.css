@@ -1,0 +1,58 @@
+.tester {
+    background-color: yellow;
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+ #sidebar {
+    background: #2a2c36;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 250px;
+    overflow: hidden;
+    right: 0;
+    margin: 0;
+    -moz-transition: right ease .25s;
+    -o-transition: right ease .25s;
+    -webkit-transition: right ease .25s;
+    transition: right ease .25s;
+}
+
+ #sidebar.alternate-colour {
+    background:#dee2e8;
+    color: #000;
+}
+
+ #sidebar.hide-sidebar {
+        right: -250px;
+        -moz-transition: right ease .25s;
+        -o-transition: right ease .25s;
+        -webkit-transition: right ease .25s;
+        transition: right ease .25s;
+    }
+
+ #wrapper {
+    margin: 0 250px 0 0;
+    -moz-transition: margin-right ease .25s;
+    -o-transition: margin-right ease .25s;
+    -webkit-transition: margin-right ease .25s;
+    transition: margin-right ease .25s;
+}
+
+    #wrapper.hide-sidebar {
+        margin-right: 0;
+        -moz-transition: margin-right ease .25s;
+        -o-transition: margin-right ease .25s;
+        -webkit-transition: margin-right ease .25s;
+        transition: margin-right ease .25s;
+    }
+
+
+@import '~/node_modules/bootstrap/dist/bootstrap.css';
+@import '~/node_modules/bootswatch/spacelab/bootstrap.min.css';
+@import '~/node_modules/font-awesome/css/font-awesome.min.css';
+

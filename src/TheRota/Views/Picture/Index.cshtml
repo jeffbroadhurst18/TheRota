@@ -1,0 +1,18 @@
+﻿@model IEnumerable<TheRota.Models.Picture>
+@{
+    ViewBag.Title = "Pictures";
+}
+
+
+<table class="table table-bordered table table-striped picture-table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="picture-col1">
+                <img src="@Url.Content("~/images/" + System.IO.Path.GetFileName(item.Path))" alt="holiday-pic" class="holiday-pic" />
+            </td>
+            <td class="picture-col2">@item.Title</td>
+        </tr>
+    }
+</table>

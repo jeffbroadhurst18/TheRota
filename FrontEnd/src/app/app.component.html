@@ -1,0 +1,44 @@
+<main>
+   <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button id="sidebarToggle" class="btn btn-primary" (click)="sidebarToggle()">
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                    <button id="colourToggle" class="btn btn-primary" (click)="colourToggle()">
+                        <i class="fa fa-star"></i>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" class="btn btn-sm btn-info">
+                        <i class="fa fa-save"></i>Save
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-sm btn-info">
+                        <i class="fa fa-print"></i>Print
+                    </a>
+                </li>
+            </ul>
+        </div>
+</nav>
+<div id="sidebar" [class.hide-sidebar]="!showSidebar" [class.alternate-colour]="showAlternateColour">
+	<ul class="nav">
+		<li class="active"><a routerLink="game"  routerLinkActive="active">Game</a></li>
+		<li><a routerLink="weather"  routerLinkActive="active">Weather</a></li>
+	</ul>
+</div>
+<div id="wrapper">
+	<div id="main" class="container-fluid">
+		<router-outlet></router-outlet>
+	</div>
+</div>
+<div id="footer" class="container-fluid">
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+		<h4 class="text-center text-info">&copy; 2017 - The Rota by Jeff</h4>
+	</div>
+</div>
+</main>

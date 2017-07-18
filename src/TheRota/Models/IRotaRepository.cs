@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using TheRota.Models;
+﻿using System.Collections.Generic;
+using TheRota.ViewModels;
 
 namespace TheRota.Models
 {
@@ -12,5 +9,6 @@ namespace TheRota.Models
         IEnumerable<Picture> GetPictures(int id);
         IEnumerable<Person> GetPersons();
         int SavePerson(Person person);
+        IEnumerable<PersonRoleViewModel> GetPersonRoles(int personId);
     }
 }

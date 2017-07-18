@@ -74,6 +74,14 @@ namespace TheRota.Controllers
         {
         }
 
+
+        [HttpGet("getpersonroles/{personid}")]
+        public IActionResult GerPersonRoles(int personId)
+        {
+           var personRoles = _repository.GetPersonRoles(personId);
+           return new JsonResult(personRoles, DefaultJsonSettings);
+        }
+
         private JsonSerializerSettings DefaultJsonSettings
         {
             get

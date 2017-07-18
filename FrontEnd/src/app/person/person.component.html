@@ -33,6 +33,7 @@
             <td>{{ person.FirstName }}</td>
             <td>{{ person.LastName }}</td>
             <td>{{ person.IdNumber }}</td>
+            <td><a [routerLink]="['/personrole',person.Id]" class="btn btn-sm btn-primary">Manage</a></td>
         </tr>
     </table>
 </div>

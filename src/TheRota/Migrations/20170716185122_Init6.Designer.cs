@@ -8,9 +8,10 @@ using TheRota.Models;
 namespace TheRota.Migrations
 {
     [DbContext(typeof(RotaContext))]
-    partial class RotaContextModelSnapshot : ModelSnapshot
+    [Migration("20170716185122_Init6")]
+    partial class Init6
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -32,7 +33,7 @@ namespace TheRota.Migrations
 
             modelBuilder.Entity("TheRota.Models.Person", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("PersonId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateCreated");
@@ -43,9 +44,9 @@ namespace TheRota.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.HasKey("Id");
+                    b.HasKey("PersonId");
 
-                    b.ToTable("persons");
+                    b.ToTable("Persons");
                 });
 
             modelBuilder.Entity("TheRota.Models.PersonRole", b =>
@@ -63,7 +64,7 @@ namespace TheRota.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("personroles");
+                    b.ToTable("PersonRoles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Picture", b =>
@@ -82,14 +83,14 @@ namespace TheRota.Migrations
 
             modelBuilder.Entity("TheRota.Models.Role", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("RoleId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
-                    b.HasKey("Id");
+                    b.HasKey("RoleId");
 
-                    b.ToTable("roles");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Rota", b =>

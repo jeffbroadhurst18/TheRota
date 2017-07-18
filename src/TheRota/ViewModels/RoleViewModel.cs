@@ -9,6 +9,9 @@ namespace TheRota.ViewModels
     public class RoleViewModel
     {
         [Required]
+        public int Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
     }
 }

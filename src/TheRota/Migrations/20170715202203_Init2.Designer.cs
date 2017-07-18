@@ -8,9 +8,10 @@ using TheRota.Models;
 namespace TheRota.Migrations
 {
     [DbContext(typeof(RotaContext))]
-    partial class RotaContextModelSnapshot : ModelSnapshot
+    [Migration("20170715202203_Init2")]
+    partial class Init2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -45,7 +46,7 @@ namespace TheRota.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("persons");
+                    b.ToTable("Persons");
                 });
 
             modelBuilder.Entity("TheRota.Models.PersonRole", b =>
@@ -53,17 +54,15 @@ namespace TheRota.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("PersonId");
+                    b.Property<int>("PersonId");
 
-                    b.Property<int?>("RoleId");
+                    b.Property<int>("RoleId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PersonId");
 
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("personroles");
+                    b.ToTable("PersonRoles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Picture", b =>
@@ -89,7 +88,7 @@ namespace TheRota.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("roles");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Rota", b =>
@@ -118,11 +117,8 @@ namespace TheRota.Migrations
                 {
                     b.HasOne("TheRota.Models.Person")
                         .WithMany("PersonRoles")
-                        .HasForeignKey("PersonId");
-
-                    b.HasOne("TheRota.Models.Role")
-                        .WithMany("PersonRoles")
-                        .HasForeignKey("RoleId");
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("TheRota.Models.Rota", b =>

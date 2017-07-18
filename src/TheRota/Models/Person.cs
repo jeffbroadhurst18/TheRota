@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TheRota.Models
 {
+    [Table("persons")]
     public class Person
     {
         public int Id { get; set; }

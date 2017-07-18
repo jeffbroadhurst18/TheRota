@@ -8,9 +8,10 @@ using TheRota.Models;
 namespace TheRota.Migrations
 {
     [DbContext(typeof(RotaContext))]
-    partial class RotaContextModelSnapshot : ModelSnapshot
+    [Migration("20170716191442_Init7")]
+    partial class Init7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

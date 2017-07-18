@@ -8,9 +8,10 @@ using TheRota.Models;
 namespace TheRota.Migrations
 {
     [DbContext(typeof(RotaContext))]
-    partial class RotaContextModelSnapshot : ModelSnapshot
+    [Migration("20170715203752_Init4")]
+    partial class Init4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -45,7 +46,7 @@ namespace TheRota.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("persons");
+                    b.ToTable("Persons");
                 });
 
             modelBuilder.Entity("TheRota.Models.PersonRole", b =>
@@ -63,7 +64,7 @@ namespace TheRota.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("personroles");
+                    b.ToTable("PersonRoles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Picture", b =>
@@ -89,7 +90,7 @@ namespace TheRota.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("roles");
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("TheRota.Models.Rota", b =>

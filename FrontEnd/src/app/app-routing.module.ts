@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PersonRoleComponent } from './personrole/personrole.component';
 
 const routes: Routes = [
       {
@@ -21,6 +22,10 @@ const routes: Routes = [
             path: 'person',
             redirectTo: '/person',
             pathMatch: 'full'
+      },
+      {
+            path: 'personrole/:id',
+            component: PersonRoleComponent
       }
 ];
 

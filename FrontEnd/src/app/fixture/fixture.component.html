@@ -1,0 +1,40 @@
+<div class="col-md-6 col-md-offset-4">
+    <div>
+        <h1>Event Dates</h1>
+    </div>
+</div>
+<div class="col-md-6 col-md-offset-1">
+    <!-- <table class="table table-responsive table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Event Date</th>
+            <th>Title</th>
+        </tr>
+        <tr *ngFor="let fixture of fixtures">
+            <td>{{ fixture.Id }}</td>
+            <td>{{ fixture.FixtureDate }}</td>
+            <td>{{ fixture.Title }}</td>
+        </tr>
+    </table> -->
+</div>
+<div class="col-md-4 col-md-offset-1">
+    <form *ngIf="newFixture" [formGroup]="newDateForm" (ngSubmit)="addFixture(newDateForm.value)" class="fixtureForm">
+        <div>
+            <h4 class="text-info">Add New Date</h4>
+        </div>
+        <div class="form-group">
+            <label>Event Date</label>
+            <input class="form-control" type="date" [formControl]="newDateForm.controls['fixtureDate']"
+             [(ngModel)]="newFixture.FixtureDate">
+            <div class="alert alert-danger" *ngIf="!newDateForm.controls['fixtureDate'].valid && showValidation==true">Invalid</div>
+        </div>
+        <div class="form-group">
+            <label>Notes</label>
+            <input class="form-control" type="text" [formControl]="newDateForm.controls['title']" [(ngModel)]="newFixture.Title">
+            <div class="alert alert-danger" *ngIf="!newDateForm.controls['title'].valid && showValidation==true">Invalid</div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default btn-primary">Save</button>
+        </div>
+    </form>
+</div>

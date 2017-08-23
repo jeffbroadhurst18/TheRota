@@ -26,6 +26,11 @@ const routes: Routes = [
       {
             path: 'personrole/:id',
             component: PersonRoleComponent
+      },
+      {
+            path: 'fixture',
+            redirectTo: '/fixture',
+            pathMatch: 'full'
       }
 ];
 

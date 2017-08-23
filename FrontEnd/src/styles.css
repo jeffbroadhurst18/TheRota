@@ -2,6 +2,22 @@
     background-color: yellow;
 }
 
+.personForm {
+    border: 1px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.fixtureForm {
+    border: 1px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+.person-table-header {
+    background-color: lightblue !important;
+}
+
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -52,7 +68,7 @@ body {
     }
 
 
-@import '~/node_modules/bootstrap/dist/bootstrap.css';
+/* @import '~/node_modules/bootstrap/dist/bootstrap.css';
 @import '~/node_modules/bootswatch/spacelab/bootstrap.min.css';
-@import '~/node_modules/font-awesome/css/font-awesome.min.css';
+@import '~/node_modules/font-awesome/css/font-awesome.min.css'; */
 

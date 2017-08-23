@@ -8,12 +8,13 @@ import { WeatherModule } from './weather/weather.module';
 import { PersonModule } from './person/person.module';
 import { PersonRoleModule } from './personrole/personrole.module';
 import { RoleModule } from './role/role.module';
+import { FixtureModule } from './fixture/fixture.module';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
         BrowserModule,GameModule,AppRoutingModule,BrowserAnimationsModule,WeatherModule,
-        HttpModule,PersonModule,PersonRoleModule,RoleModule
+        HttpModule,PersonModule,PersonRoleModule,RoleModule,FixtureModule
     ],
     declarations: [
         AppComponent

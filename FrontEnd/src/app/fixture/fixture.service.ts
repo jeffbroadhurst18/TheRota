@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from "rxjs/Observable";
-import { PersonRole } from '../models/personrole';
+import { Fixture } from '../models/fixture';
 
 @Injectable()
-export class PersonRoleService {
+export class FixtureService {
 
     baseUrl : string;
 
@@ -12,14 +12,14 @@ export class PersonRoleService {
             this.baseUrl = 'http://localhost:61643/api';
      }
 
-    getPersonRoles(personId: number) : Observable<PersonRole[]> {
-           let url: string = this.baseUrl + '/person/getpersonroles/' + personId.toString();
+    getFixtures() : Observable<Fixture[]> {
+           let url: string = this.baseUrl + '/fixture/fixtures';
            return this.http.get(url).map((res: Response) => res.json());
     }
 
-    public savePersonRole(personrole: PersonRole){
-        let url: string = this.baseUrl + '/person/personrolesave';
-        return this.http.post(url,JSON.stringify(personrole), this.getRequestOptions())
+    saveFixture(fixture: Fixture){
+        let url: string = this.baseUrl + '/fixture/save';
+        return this.http.post(url,JSON.stringify(fixture), this.getRequestOptions())
         .map((res: Response) => res.json());
     }
 

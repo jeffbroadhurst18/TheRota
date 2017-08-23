@@ -1,7 +1,30 @@
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-6 col-md-offset-4">
+    <div>
+        <h1>Person List</h1>
+    </div>
+</div>
+<div class="col-md-6 col-md-offset-1">
     <my-wait [hidden]="notBusy"></my-wait>
-    
-    <form *ngIf="newPerson" [formGroup]="newPersonForm" (ngSubmit)="addPerson(newPersonForm.value)">
+
+    <table class="table table-responsive table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Id</th>
+        </tr>
+        <tr *ngFor="let person of persons">
+            <td>{{ person.FirstName }}</td>
+            <td>{{ person.LastName }}</td>
+            <td>{{ person.IdNumber }}</td>
+            <td><a [routerLink]="['/personrole',person.Id]" class="btn btn-sm btn-primary">Manage</a></td>
+        </tr>
+    </table>
+</div>
+<div class="col-md-4 col-md-offset-1">
+    <form *ngIf="newPerson" [formGroup]="newPersonForm" (ngSubmit)="addPerson(newPersonForm.value)" class="personForm">
+        <div>
+            <h4 class="text-info">Add New Person</h4>
+        </div>
         <div class="form-group">
             <label>First Name:</label>
             <input class="form-control" type="text" [formControl]="newPersonForm.controls['firstName']" [(ngModel)]="newPerson.FirstName">
@@ -18,22 +41,7 @@
             <div class="alert alert-danger" *ngIf="!newPersonForm.controls['idNumber'].valid && showValidation==true">Invalid</div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-default">Submit</button>
-            <!--<button type="submit" class="btn btn-default" [disabled]="!newPersonForm.valid">Submit</button>-->
+            <button type="submit" class="btn btn-default btn-primary">Submit</button>
         </div>
-    </form> 
-    
-    <table class="table table-responsive table-striped">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Id</th>
-        </tr>
-        <tr *ngFor="let person of persons">
-            <td>{{ person.FirstName }}</td>
-            <td>{{ person.LastName }}</td>
-            <td>{{ person.IdNumber }}</td>
-            <td><a [routerLink]="['/personrole',person.Id]" class="btn btn-sm btn-primary">Manage</a></td>
-        </tr>
-    </table>
+    </form>
 </div>
